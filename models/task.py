@@ -9,7 +9,7 @@ class Task:
         return{
             "id" : self.id,
             "titulo" : self.titulo,
-            "descricão" : self.descricao,
+            "descrição" : self.descricao,
             "completa" : self.completa
         }
     
