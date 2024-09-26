@@ -43,7 +43,7 @@ def update_task(id):
         if atividade.id == id:
             task = atividade
             break
-        
+
     print(task)
 
     if task == None:
@@ -72,4 +72,5 @@ def delete_task(id):
 
 if  __name__ == "__main__":
     app.run(debug=True)
-    
+
+#API finalizada
