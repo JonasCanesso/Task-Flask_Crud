@@ -38,7 +38,7 @@ def test_update_task():
         payload = {
             "completa": True,
             "descricao": "nova descricao",
-            "titulo": "Nova tarefa"
+            "titulo": "New tarefa"
         }
         response = requests.put(f'{BASE_URL}/tasks/{task_id}', json=payload)
         response.status_code == 200
@@ -53,3 +53,11 @@ def test_update_task():
         assert response_json["descricao"] == payload["descricao"]
         assert response_json["completa"] == payload["completa"]
 
+def test_delete_task():
+    if tasks:
+        task_id = tasks[0]
+        response = requests.delete(f"{BASE_URL}/tasks/{task_id}")
+        response.status_code == 200
+
+        response = requests.get(f'{BASE_URL}/tasks/{task_id}')
+        assert response.status_code == 404

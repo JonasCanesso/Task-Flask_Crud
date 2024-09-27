@@ -50,7 +50,7 @@ def update_task(id):
         return jsonify({"mensagem": "Não foi possivel encontrar a atividade"}), 404
     
     data = request.get_json()
-    task.title = data['titulo']
+    task.titulo = data['titulo']
     task.descricao = data['descricao']
     task.completa = data['completa']
     print(task)
